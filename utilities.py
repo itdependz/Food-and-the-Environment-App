@@ -13,3 +13,6 @@ def BarGraphDisplay(df, foodList, targetMetric):
     fig = px.bar(df, x=foodList, y=ylist, title='Food Footprint', labels={'x': 'Food', 'y':targetMetric})
     
     return fig
+
+def normalization():
+    return True
