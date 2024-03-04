@@ -14,5 +14,10 @@ def BarGraphDisplay(df, foodList, targetMetric):
     
     return fig
 
-def normalization():
-    return True
+def normalization(num, min, max):
+    return (num - min) / (max - min)
+
+def compositeNumConvert(num):
+    if(int(num*10) == 10):
+        return int(num*10)
+    return int(num*10)+1
