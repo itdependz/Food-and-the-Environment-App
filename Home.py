@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-import BarGraphDisplay
+import utilities
 
 reader = csv.reader(open('./data/food-footprints.csv'))
 
@@ -13,6 +13,7 @@ st.set_page_config(
     page_title="Enviromental Footprints of Food",
     layout="wide",
     initial_sidebar_state="expanded",
+    page_icon="🌏"
 )
 
 # Add a title
@@ -21,13 +22,6 @@ st.title("Enviromental Footprints of Food")
 
 # import your Data
 df = pd.read_csv("./data/food-footprints.csv")
-
-# Setup the Pygwalker
-# Generate the HTML using Pygwalker
-pyg_html = pyg.walk(df, return_html=True)
-
-# Embed the generated HTML into the Streamlit App
-components.html(pyg_html, width=1000, height=800, scrolling=True)
 
 
 # Make the Entity column as a list
@@ -42,14 +36,6 @@ for i in metrics:
         metrics.remove(i)
         break
 
-
-#create bar chart using plotly
-fig = px.bar(df, x='Entity', y='Emissions per kilogram', title='Food Footprint')
-
-
-#embed the plotly chart into the Streamlit App
-st.plotly_chart(fig, use_container_width=True)
-
 metricOption = st.selectbox(
     'Choose a Metric to Display',
     metrics
@@ -60,4 +46,8 @@ foodOptions = st.multiselect(
     entities
     )
 # Call the BarGraphDisplay function
-st.plotly_chart(BarGraphDisplay.BarGraphDisplay(df, foodOptions, metricOption))
+try:
+    st.plotly_chart(utilities.BarGraphDisplay(df, foodOptions, metricOption))
+except:
+    st.write("Please select a metric and food to display")
+    st.write("If you have selected a food and metric, please ensure the food is in the list of foods")
