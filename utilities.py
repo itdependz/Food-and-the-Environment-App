@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
+import csv
 
 def BarGraphDisplay(df, foodList, targetMetric):
     # Get the corresponding cell to the item in the list under Emissions PEr kilogram
@@ -21,3 +22,13 @@ def compositeNumConvert(num):
     if(int(num*10) == 10):
         return int(num*10)
     return int(num*10)+1
+
+def compositeScoreGetter(food, factor):
+    df = pd.read_csv("./data/compositevalue.csv")
+    print(df.loc[df['Entity']==food, factor])
+    return df.loc[df['Entity'] == food, factor].values[0]
+    # with open("./data/compositevalue.csv", "r") as file:
+    #     reader = csv.reader(file)
+    #     for row in reader:
+    #         if row[0] == food:
+    #             return df.loc[row, factor]
