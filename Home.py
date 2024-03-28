@@ -51,3 +51,4 @@ try:
 except:
     st.write("Please select a metric and food to display")
     st.write("If you have selected a food and metric, please ensure the food is in the list of foods")
+

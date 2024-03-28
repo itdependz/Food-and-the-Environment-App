@@ -1,0 +1,212 @@
+Entity,biodiversity_kg,rank
+Ale,0.003360077,28.0
+Almond butter,0.046488123,152.0
+Almond milk,0.009001299,73.0
+Almonds,0.048142219,156.0
+Apple juice,0.001707215,15.0
+Apple pie,0.008637561,71.0
+Apples,0.001684822,13.0
+Apricot jam,0.008275827,70.0
+Asparagus,0.003843574,33.0
+Avocados,0.00419438,37.0
+Bacon,0.085096014,174.0
+Bagels,0.006449232,53.0
+Baguette,0.007464258,63.0
+Banana loaf,0.0435227,145.0
+Bananas,0.044044539,147.0
+Beans,0.072332567,168.0
+Beef burger,0.335877536,202.0
+Beef curry,0.122921325,183.0
+Beef meatballs,0.363921379,203.0
+Beef mince,0.480174495,207.0
+Beef noodles,0.016070594,98.0
+Beef steak,0.613172835,209.0
+Beer,0.00340905,29.0
+Beetroot,0.005163691,43.0
+Biscuits,0.117827563,182.0
+Blue cheese,0.248981164,199.0
+Brazil nuts,0.050033277,158.0
+Bread,0.006228946,51.0
+Breakfast cereal,0.007565354,65.0
+Brie,0.227932655,197.0
+Broccoli,0.001621932,12.0
+Butter,0.03078018,133.0
+Cabbage,0.000288219,3.0
+Caesar salad,0.016124727,99.0
+Camembert,0.191433838,191.0
+Carrot cake,0.016745546,100.0
+Carrots,0.000190636,2.0
+Cashew nuts,0.047778807,154.0
+Cauliflower,0.000357939,5.0
+Cereal bars,0.062243474,164.0
+Cheddar cheese,0.247478254,198.0
+Cheesecake,0.017187374,104.0
+Cherry tomatoes,0.001100043,10.0
+Chia seeds,0.01911202,109.0
+Chicken breast,0.042612825,143.0
+Chicken burger,0.026758193,126.0
+Chicken curry,0.017088819,102.0
+Chicken noodles,0.01328592,87.0
+Chicken pasta,0.01564821,95.0
+Chicken sausages,0.037167181,139.0
+Chicken thighs,0.044838892,150.0
+Chicken wings,0.043300037,144.0
+Chickpeas,0.072266938,167.0
+Chilli con carne,0.129889396,184.0
+Chocolate biscuits,0.197718267,194.0
+Chocolate cake,0.142833625,185.0
+Chocolate cereals,0.076797947,169.0
+Chocolate cheesecake,0.148299675,186.0
+Chocolate spread,0.179445187,189.0
+Cider,0.003174048,24.0
+Coconut milk,0.001789305,16.0
+Coconut oil,0.002997811,21.0
+Cod,0.021841825,115.0
+Cod fish fingers,0.021209124,114.0
+Cod fishcakes,0.015354397,94.0
+Coffee beans,0.444449354,205.0
+Coffee pods,0.48816522,208.0
+Cookies,0.085082683,173.0
+Cottage cheese,0.306745082,201.0
+Cottage pie,0.085977322,175.0
+Courgettes,0.003861312,34.0
+Couscous,0.006711179,55.0
+Cow's milk,0.033287265,135.0
+Cracker biscuits,0.024274407,122.0
+Crisps,0.035296121,137.0
+Croissants,0.020549909,113.0
+Cucumber,0.00351208,30.0
+Dairy-free cheese,0.030075953,129.0
+Dairy-free ice cream,0.082902241,172.0
+Dark chocolate,1.0,211.0
+Doughnuts,0.048306054,157.0
+Egg noodles,0.011441094,83.0
+Eggs,0.023117617,118.0
+Falafels,0.013187332,86.0
+Feta cheese,0.177546884,188.0
+Flapjack,0.021859687,116.0
+Frozen chips (french fries),0.007336099,62.0
+Frozen jacket potatoes,0.001610228,11.0
+Frozen mashed potato,0.00405207,35.0
+Frozen onion rings,0.008823055,72.0
+Frozen potato wedges,0.005142181,42.0
+Frozen roast potatoes,0.007287991,61.0
+Frozen sweet potato fries,0.007636536,66.0
+Fruit cake,0.010023054,81.0
+Fruit smoothies,0.009769978,78.0
+Garden peas,0.012276791,84.0
+Goat's cheese,0.226463262,196.0
+Granola,0.030164001,130.0
+Grapes,0.004489262,39.0
+Haddock risotto,0.025864099,124.0
+Halloumi cheese,0.196397054,193.0
+Ice cream,0.07720373,170.0
+Ice lollies,0.014030167,91.0
+Instant coffee,0.709907731,210.0
+Kale,0.000299708,4.0
+Kiwis,0.005937166,48.0
+Lamb (leg),0.102514831,178.0
+Lamb Hotpot,0.037271176,140.0
+Lamb burgers,0.089833468,177.0
+Lamb casserole,0.10306308,179.5
+Lamb chops,0.10306308,179.5
+Lamb curry,0.03925508,141.0
+Lamb moussaka,0.039971335,142.0
+Lasagne sheets,0.007259346,60.0
+Lemons,0.00271097,19.0
+Lentils,0.087143903,176.0
+Lettuce,0.016762115,101.0
+Limes,0.002670427,18.0
+Macaroni cheese,0.205208431,195.0
+Mackerel,0.024227209,121.0
+Marmalade,0.009706034,77.0
+Meat pizza,0.044140154,148.0
+Meat-free burger,0.009598042,75.0
+Meat-free mince,0.009949507,80.0
+Meat-free nuggets,0.004954281,41.0
+Meat-free sausages,0.008245278,69.0
+Melon,0.005408445,44.0
+Milk chocolate,0.406417637,204.0
+Mixed salad,0.003782558,32.0
+Mozzarella cheese,0.19260566,192.0
+Muesli,0.014660884,93.0
+Muffins,0.044259718,149.0
+Mushrooms,0.012659549,85.0
+Naan,0.007022825,57.0
+Nut loaf,0.009174977,74.0
+Oat milk,0.003302696,27.0
+Olive oil,0.16897779,187.0
+Onions,2.95e-14,1.0
+Orange juice,0.003259061,26.0
+Oranges,0.002500368,17.0
+Pain au chocolat,0.068998482,166.0
+Pancakes,0.01136275,82.0
+Parmesan cheese,0.288148807,200.0
+Parsnips,0.000492326,6.0
+Pasta shells,0.006559529,54.0
+Peanut butter,0.019387655,110.0
+Peanuts,0.019673817,111.0
+Pears,0.006024569,49.0
+Pecan nuts,0.046619585,153.0
+Penne pasta,0.007708092,68.0
+Peppers,0.00411929,36.0
+Pineapple,0.006082205,50.0
+Pitta bread,0.003148582,23.0
+Popcorn,0.023393238,119.0
+Poppadoms,0.024392039,123.0
+Pork chops,0.05277604,160.0
+Pork loin,0.054189612,161.0
+Pork sausage rolls,0.03649113,138.0
+Pork sausages,0.043826387,146.0
+Porridge (oatmeal),0.017163945,103.0
+Potato croquettes,0.00311057,22.0
+Potatoes,0.000631676,7.0
+Prawn crackers,0.030336068,131.0
+Prawns,0.003720135,31.0
+Protein bar,0.082296058,171.0
+Protein shake,0.024087991,120.0
+Pumpkin seeds,0.018279295,106.0
+Quiche,0.045647383,151.0
+Quinoa,0.017468786,105.0
+Rapeseed oil,0.018770096,107.0
+Raspberries,0.004487881,38.0
+Raspberry jam,0.009813339,79.0
+Rice,0.007514676,64.0
+Rice milk,0.000634647,8.0
+Rice noodles,0.005479131,45.0
+Ricotta cheese,0.189531826,190.0
+Salmon,0.018857009,108.0
+Salmon fishcakes,0.01383366,90.0
+Sausage rolls,0.032685927,134.0
+Shepherd's pie,0.026751029,125.0
+Shortbread biscuits,0.019808034,112.0
+Sourdough bread,0.006339568,52.0
+Soy desert,0.028576656,128.0
+Soy milk,0.006759373,56.0
+Soy yoghurt,0.00318639,25.0
+Spaghetti,0.007162182,59.0
+Spaghetti bolognese,0.05580939,162.0
+Spinach,0.002750803,20.0
+Sponge cake,0.015929595,97.0
+Steak pie,0.051738309,159.0
+Strawberries,0.013576369,89.0
+Strawberry jam,0.014631633,92.0
+Sugar,0.013326163,88.0
+Sunflower oil,0.115153419,181.0
+Sunflower seeds,0.06592637,165.0
+Sweetcorn,0.001691947,14.0
+Tea,0.476396303,206.0
+Tofu,0.005580317,46.0
+Tomato ketchup,0.004620701,40.0
+Tomatoes,0.000764135,9.0
+Tortilla wraps,0.007093971,58.0
+Tuna,0.022088928,117.0
+Vegan pizza,0.009702631,76.0
+Vegetable lasagne,0.034437587,136.0
+Ale,0.0304099,132.0
+Ale,0.007698218,67.0
+Almond butter,0.056673075,163.0
+Almond milk,0.048004527,155.0
+Almonds,0.005886991,47.0
+Apple juice,0.015786533,96.0
+Apple pie,0.027948708,127.0
