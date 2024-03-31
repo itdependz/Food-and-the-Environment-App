@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier
+from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier
 import time
 import math
 
@@ -53,4 +53,4 @@ if submit:
     time.sleep(1)
     progress.empty()
     st.write("The composite score for " + foodOptions + " is " + str(compositeScore) + " and the rank score is " + str(rankedScoreSupplier(foodOptions)))
-
+    st.write(rankedScoreDataFrameSupplier())

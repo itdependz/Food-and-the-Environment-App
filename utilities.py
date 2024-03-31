@@ -20,9 +20,9 @@ def normalization(num, min, max):
     return (num - min) / (max - min)
 
 def compositeNumConvert(num):
-    if(int(num*10) == 10):
-        return int(num*10)
-    return int(num*10)+1
+    if(math.floor(num*10) == 10):
+        return math.floor(num*10)
+    return math.ceil(num*10)
 
 def compositeScoreGetter(food, factor):
     df = pd.read_csv("./data/compositevalue.csv")
@@ -34,6 +34,7 @@ def compositeScoreGetter(food, factor):
     #         if row[0] == food:
     #             return df.loc[row, factor]
 
+
 def rankedScoreSupplier(food) -> int:
     emissionDF = pd.read_csv("./data/emissionsrankedfinal.csv")
     eutriphicationDF = pd.read_csv("./data/eutriphicationrankedfinal.csv")
@@ -43,5 +44,13 @@ def rankedScoreSupplier(food) -> int:
     biodiversityDF = pd.read_csv("./data/biodiversityrankedfinal.csv")
     
     #grab the rank from each dataframe based on the food and average them
-    rank = (emissionDF.loc[emissionDF['Entity'] == food, 'rank'].values[0] + eutriphicationDF.loc[eutriphicationDF['Entity'] == food, 'rank'].values[0] + landUseDF.loc[landUseDF['Entity'] == food, 'rank'].values[0] + waterScarcityDF.loc[waterScarcityDF['Entity'] == food, 'rank'].values[0] + waterWithdrawalDF.loc[waterWithdrawalDF['Entity'] == food, 'rank'].values[0] + biodiversityDF.loc[biodiversityDF['Entity'] == food, 'rank'].values[0]) / 6
+    try:
+        rank = (emissionDF.loc[emissionDF['Entity'] == food, 'rank'].values[0] + eutriphicationDF.loc[eutriphicationDF['Entity'] == food, 'rank'].values[0] + landUseDF.loc[landUseDF['Entity'] == food, 'rank'].values[0] + waterScarcityDF.loc[waterScarcityDF['Entity'] == food, 'rank'].values[0] + waterWithdrawalDF.loc[waterWithdrawalDF['Entity'] == food, 'rank'].values[0] + biodiversityDF.loc[biodiversityDF['Entity'] == food, 'rank'].values[0]) / 6
+    except:
+        print("The ranking for this food may be innacurate due to inadequate data.")
+        rank = 200
     return math.floor(rank)
+
+def rankedScoreDataFrameSupplier():
+    df = pd.read_csv("./data/sorted_rank.csv")
+    return df
