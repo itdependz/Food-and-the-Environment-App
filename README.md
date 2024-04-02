@@ -5,13 +5,11 @@ First install necessary requirements.
 1. Pygwalker
 ```bash
 pip install pygwalker
-```
-2. Streamlit
-```bash
 pip install streamlit
+pip install pandas
 ```
 
-By now it should install all required dependicies so to run the app type
+After all dependencies are installed run the following in the VScode terminal
 ```bash
 streamlit run app.py
 ```
