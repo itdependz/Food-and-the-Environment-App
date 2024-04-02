@@ -1,4 +1,3 @@
-import pygwalker as pyg
 import pandas as pd
 import streamlit.components.v1 as components
 import streamlit as st
