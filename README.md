@@ -1,17 +1,14 @@
 # Food-and-the-Environment-App
 
 ## How to Run the App
-First install necessary requirements.
-1. Pygwalker
-```bash
-pip install pygwalker
-```
-2. Streamlit
+First install necessary requirements
 ```bash
 pip install streamlit
+pip install pandas
+pip install plotly-express
 ```
 
-By now it should install all required dependicies so to run the app type
+After all dependencies are installed run the following in the VScode terminal
 ```bash
 streamlit run app.py
 ```
