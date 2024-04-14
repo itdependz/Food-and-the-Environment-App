@@ -42,8 +42,6 @@ biodiversityScore = abs(2*compositeScoreGetter(foodOptions, "biodiversity_kg")-1
 # add up the values
 compositeScore = emissionScore + landUseScore + eutrophicationScore + waterScarcityScore + waterWithdrawalScore + biodiversityScore
 
-
-
 if submit:
     progress.progress(0)
     for i in range(100):
