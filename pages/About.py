@@ -10,6 +10,13 @@ st.title("About this Project")
 
 st.markdown("## Purpose")
 st.markdown("## The 5 Factors")
+st.markdown("**Emissions per kg**- The amount of greenhouse gases produced per kilogram of food.")
+st.markdown("**Land use per kg**- The amount of land used per kilogram of food.")
+st.markdown("**Eutrophication per kg**- The amount of nutrients that are added to the environment per kilogram of food.")
+st.markdown("**Water scarcity per kg**- Scarcity-weighted water use represents freshwater use weighted by local water scarcity. This is measured in liters per kilogram of food product..")
+st.markdown("**Water withdrawals per kg**- Freshwater withdrawals per kilogram of food product.")
+st.markdown("**Biodiversity per kg**- The amount of biodiversity loss per kilogram of food product.")
+
 st.markdown("## Composite Scores")
 st.markdown("To help understand the environmental impact of the food we eat, we can look at the composite score of the item.\
  There are two types of composite scores that users can look at, the full composite score and the ranked composite score.")

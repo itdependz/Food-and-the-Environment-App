@@ -3,9 +3,10 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier
+from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients
 import time
 import math
+import json
 
 # Add a title
 st.title("Food Composite Score Calculator")
@@ -24,6 +25,10 @@ foodOptions = st.selectbox(
     entities
     )
 
+# create a textbox to input the dish
+dish = st.text_input("Enter the dish you want ingredients for")
+
+
 # Create a button to sumbit the food
 submit = st.button("Submit")
 
@@ -40,7 +45,7 @@ waterWithdrawalScore = compositeScoreGetter(foodOptions, "Water withdrawals per 
 biodiversityScore = abs(2*compositeScoreGetter(foodOptions, "biodiversity_kg")-11)
 
 # add up the values
-compositeScore = emissionScore + landUseScore + eutrophicationScore + waterScarcityScore + waterWithdrawalScore + biodiversityScore
+compositeScore = (emissionScore + landUseScore + eutrophicationScore + waterScarcityScore + waterWithdrawalScore + biodiversityScore)/6
 
 if submit:
     progress.progress(0)
@@ -51,3 +56,16 @@ if submit:
     progress.empty()
     st.write("The composite score for " + foodOptions + " is " + str(compositeScore) + " and the rank score is " + str(rankedScoreSupplier(foodOptions)))
     st.write(rankedScoreDataFrameSupplier())
+    # get the nutrional value for the food
+    #translate to foodsurvey
+    translatedFood = translatetoFoodSurvey(foodOptions)
+    nutrition = getNutrionalValue(translatedFood)
+    st.markdown("# Nutrition")
+    st.write(nutrition)
+    ingredients = getDishFromDB(dish)
+    # ingredientsList = justIngredients(dish)
+    st.markdown("# Ingredients")
+    st.write(ingredients)
+    # st.write(ingredientsList)
+        
+        
