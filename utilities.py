@@ -4,6 +4,9 @@ import streamlit as st
 import plotly.express as px
 import csv
 import math
+import json
+import ast
+import requests
 
 def BarGraphDisplay(df, foodList, targetMetric):
     # Get the corresponding cell to the item in the list under Emissions PEr kilogram
@@ -53,3 +56,71 @@ def rankedScoreSupplier(food) -> int:
 def rankedScoreDataFrameSupplier():
     df = pd.read_csv("./data/sorted_rank.csv")
     return df
+
+def getNutrionalValue(food_description):
+    with open("./data/foodsurvery_edit.json") as f:
+        data = json.load(f)
+        # loop through the data to find the food
+        for food in data['SurveyFoods']:
+            if food['description'] == food_description:
+                # print(f"Description: {food['description']}")
+                nutritional_info = []
+                for nutrient in food['foodNutrients']:
+                    name = nutrient['nutrient']['name']
+                    amount = nutrient['amount']
+                    unit = nutrient['nutrient']['unitName']
+                    nutritional_info.append(f"{name}: {amount} {unit}")
+                return nutritional_info
+        return None
+
+def translatetoFoodSurvey(food):
+    # open foodtoFoodSurvey.csv
+    with open("./data/foodtoFoodSurvey.csv", "r") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            if row[0] == food:
+                return row[1]
+
+def getDishFromDB(food):
+    # format the food where the first letter is capatilized, spaces are subsituted with _, and the rest of the letters are lower case
+    food = food.lower()
+    food = food.replace(" ", "_")
+    food = food.capitalize()
+    # Define the API endpoint URL
+    api_url = f"https://www.themealdb.com/api/json/v1/1/search.php?s={food}"
+    # Make a GET request to the API endpoint
+    response = requests.get(api_url)
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the JSON response
+        data = response.json()
+        # Save the JSON response to a file
+        return data
+    else:
+        print(f"Failed to fetch data. Status code: {response.status_code}")
+
+
+def justIngredients(food):
+     # format the food where the first letter is capatilized, spaces are subsituted with _, and the rest of the letters are lower case
+    food = food.lower()
+    food = food.replace(" ", "_")
+    food = food.capitalize()
+    ingredientsList = []
+    # Define the API endpoint URL
+    api_url = f"https://www.themealdb.com/api/json/v1/1/search.php?s={food}"
+    # Make a GET request to the API endpoint
+    response = requests.get(api_url)
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the JSON response
+        meal = response.json()
+
+        # get the ingredients from the json file
+        for i in range(0,21):
+            if meal['meals'][f'strIngredient{i}'] != "" and meal['meals'][f'strIngredient{i}'] != None:
+                ingredientsList.append((meal['meals'][f'strIngredient{i}']))
+                
+        return ingredientsList
+    else:
+        print(f"Failed to fetch data. Status code: {response.status_code}")
+
