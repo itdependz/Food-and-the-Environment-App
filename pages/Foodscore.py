@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients
+from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients, dropdownMarkDownCreator
 import time
 import math
 import json
@@ -198,8 +198,9 @@ if submit:
         st.markdown("## Nutrition: :red[Not Available]")
     else:
         st.markdown("## Nutrition: :green[Available]")
-        st.markdown("<details close><summary><h3>Tier 1 Nutrion</summary><br>hi</details>", unsafe_allow_html=True)
-        st.write(nutrition)
+        st.markdown("<details close><summary><h2>Tier 1 Nutrition</summary>" + dropdownMarkDownCreator(nutrition, 1) + "</details>", unsafe_allow_html=True)
+        st.markdown("<details close><summary><h2>Tier 2 Nutrition</summary>" + dropdownMarkDownCreator(nutrition, 2) + "</details>", unsafe_allow_html=True)
+        # st.write(nutrition)
     ingredients = getDishFromDB(dish)
     # ingredientsList = justIngredients(dish)
     st.markdown("# Ingredients")

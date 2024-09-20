@@ -124,3 +124,45 @@ def justIngredients(food):
     else:
         print(f"Failed to fetch data. Status code: {response.status_code}")
 
+def dropdownMarkDownCreator(nutritionLabel: list, tierLevel: int) -> str:
+    finalMarkDownString = ""
+    if tierLevel==1:
+        # protein information:
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[0] + "</li>"
+        # total fat
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[1] + "</li>"
+        # carbs
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[2] + "</li>"
+        # sugars
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[8] + "</li>"
+        # sodium
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[15] + "</li>"
+        # Vitamin D
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[24] + "</li>"
+        # B12
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[34] + "</li>"
+        # Iron
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[11] + "</li>"
+    elif tierLevel==2:
+        # Energy
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[3] + "</li>"
+        # Caffine
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[6] + "</li>"
+        # Fiber
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[9] + "</li>"
+        # Calcium
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[10] + "</li>"
+        # Magnesium
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[12] + "</li>"
+        # Phosphorous
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[13] + "</li>"
+        # Zinc
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[16] + "</li>"
+        # Vit A
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[20] + "</li>"
+        # Vit B-6
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[32] + "</li>"
+        # Vit C
+        finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[28] + "</li>"
+
+    return finalMarkDownString
