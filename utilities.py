@@ -166,3 +166,11 @@ def dropdownMarkDownCreator(nutritionLabel: list, tierLevel: int) -> str:
         finalMarkDownString = finalMarkDownString + "<li>" + nutritionLabel[28] + "</li>"
 
     return finalMarkDownString
+
+def curateIngredients(ingredients: dict) -> str:
+    finalIngredientsList = ""
+    for i in range(1,21):
+        if ingredients["meals"][0]["strIngredient"+str(i)] != "":
+            finalIngredientsList = finalIngredientsList + "<li>" + ingredients["meals"][0]["strIngredient"+str(i)] + ": " + ingredients["meals"][0]["strMeasure" + str(i)] + "</li>"
+    
+    return finalIngredientsList

@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients, dropdownMarkDownCreator
+from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients, dropdownMarkDownCreator, curateIngredients
 import time
 import math
 import json
@@ -203,7 +203,12 @@ if submit:
         # st.write(nutrition)
     ingredients = getDishFromDB(dish)
     # ingredientsList = justIngredients(dish)
-    st.markdown("# Ingredients")
+    st.markdown("# Information for " + ingredients["meals"][0]["strMeal"])
+    st.markdown("## Cuisine: " + ingredients["meals"][0]["strArea"])
+    st.markdown("<details close><summary><h2>Recipe</summary><" + ingredients["meals"][0]["strInstructions"], unsafe_allow_html=True)
+    st.markdown("<details close><summary><h2>Ingredient List</summary>" + curateIngredients(ingredients) + "</details>", unsafe_allow_html=True)
+    st.video(ingredients["meals"][0]["strYoutube"])
+    st.image(ingredients["meals"][0]["strMealThumb"])
     st.write(ingredients)
     # st.write(ingredientsList)
         
