@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients, dropdownMarkDownCreator, curateIngredients
+from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients, dropdownMarkDownCreator, curateIngredients, listOfAvailableDishes
 import time
 import math
 import json
@@ -32,8 +32,11 @@ foodOptions = st.selectbox(
     entities
     )
 
+# a list of all the possible dishes a user can look up
+listOfDish = listOfAvailableDishes()
+
 # create a textbox to input the dish
-dish = st.text_input("Enter the dish you want ingredients for")
+dish = st.selectbox("Enter the dish you want ingredients for", listOfDish)
 
 
 # Create a button to sumbit the food
@@ -209,7 +212,8 @@ if submit:
     st.markdown("<details close><summary><h2>Ingredient List</summary>" + curateIngredients(ingredients) + "</details>", unsafe_allow_html=True)
     st.video(ingredients["meals"][0]["strYoutube"])
     st.image(ingredients["meals"][0]["strMealThumb"])
-    st.write(ingredients)
+    # st.write(listOfDish) uncomment for debugging purposes
+    # st.write(ingredients) uncomment for debugging purposes
     # st.write(ingredientsList)
         
         

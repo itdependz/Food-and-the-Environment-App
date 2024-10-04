@@ -174,3 +174,22 @@ def curateIngredients(ingredients: dict) -> str:
             finalIngredientsList = finalIngredientsList + "<li>" + ingredients["meals"][0]["strIngredient"+str(i)] + ": " + ingredients["meals"][0]["strMeasure" + str(i)] + "</li>"
     
     return finalIngredientsList
+ 
+def listOfAvailableDishes() -> list:
+    listofDishes = []
+    listofLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","v","w","y"]
+
+    for i in range(0,len(listofLetters)):   
+        api_url = f"https://www.themealdb.com/api/json/v1/1/search.php?f={listofLetters[i]}"
+
+        response = requests.get(api_url)
+        if response.status_code == 200:
+            data = response.json()
+            for j in range(0,len(data['meals'])):
+                listofDishes.append(data['meals'][j]['strMeal'])
+        else:
+            print(f"Failed to fetch data. Status code: {response.status_code}")
+
+    return listofDishes
+        
+
