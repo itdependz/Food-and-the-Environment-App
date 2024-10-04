@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 import plotly.express as px
 import csv
-from utilities import normalization, compositeNumConvert, compositeScoreGetter, BarGraphDisplay, rankedScoreSupplier, rankedScoreDataFrameSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, justIngredients, dropdownMarkDownCreator, curateIngredients, listOfAvailableDishes
+from utilities import compositeScoreGetter,rankedScoreSupplier, getNutrionalValue, translatetoFoodSurvey, getDishFromDB, dropdownMarkDownCreator, curateIngredients, listOfAvailableDishes
 import time
 import math
 import json
